@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IELTS Listening Mock Test - Part 3</title>
+  <style>
+    input[type="text"] {
+      spellcheck: false;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+    }
+    .question-block {
+      margin-bottom: 25px;
+    }
+    .submit-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 30px;
+    }
+    .option-block, .checkbox-group {
+      margin-left: 25px;
+    }
+    .checkbox-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Start button to reveal test -->
+<div id="intro" style="text-align:center; margin-bottom: 30px;">
+  <h2>Enter your details to begin</h2>
+  <form id="userInfo" onsubmit="event.preventDefault(); startTest()">
+    <label>Full Name: <input type="text" name="fullname" required></label><br><br>
+    <label>Student Number: <input type="text" name="studentNumber" required></label><br><br>
+    <button type="submit">Start Test</button>
+  </form>
+</div>
+
+<div id="testBody" style="display:none;">
+
+<!-- Wall Street English Logo -->
+<div style="text-align:center; margin-bottom: 20px;">
+  <img src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Blue-No%20Background.png" alt="Wall Street English Logo" width="200">
+</div>
+
+<!-- Audio for Part 1 -->
+<div style="text-align:center; margin-bottom: 30px;">
+  <audio controls>
+    <source src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Part%201.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<!-- Part 1 Questions 1–10 -->
+<h3>Questions 1–10</h3>
+<p><strong>Complete the form below. Write <u>ONE WORD AND/OR A NUMBER</u> for each answer.</strong></p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <tr><td><strong>ORDER FORM</strong></td><td></td></tr>
+  <tr><td>Example:</td><td><strong>Type of item</strong>: Coffee table</td></tr>
+  <tr><td>1</td><td>Customer name: <input type="text" name="q1"></td></tr>
+  <tr><td>2</td><td>Phone number: <input type="text" name="q2"></td></tr>
+  <tr><td>3</td><td>Payment method: <input type="text" name="q3"></td></tr>
+  <tr><td>4</td><td>Card type: <input type="text" name="q4"></td></tr>
+  <tr><td>5</td><td>Colour: <input type="text" name="q5"></td></tr>
+  <tr><td>6</td><td>Finish: <input type="text" name="q6"></td></tr>
+  <tr><td>7</td><td>Catalogue number: <input type="text" name="q7"></td></tr>
+  <tr><td>8</td><td>Fabric: <input type="text" name="q8"></td></tr>
+  <tr><td>9</td><td>Item: <input type="text" name="q9"></td></tr>
+  <tr><td>10</td><td>Delivery day: <input type="text" name="q10"></td></tr>
+</table>
+
+<!-- Audio for Part 2 -->
+<div style="text-align:center; margin-bottom: 30px;">
+  <audio controls>
+    <source src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Part%202.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<!-- Part 2 Questions 11–20 -->
+<h3>Questions 11–17</h3>
+<p><strong>Complete the sentences below. Write <u>NO MORE THAN TWO WORDS</u> for each answer.</strong></p>
+<h4>Marathon – Tips for Spectators</h4>
+<p>11. To enjoy the day, make sure you <input type="text" name="q11"> it first.</p>
+<p>12. Travel <input type="text" name="q12"> within the city centre.</p>
+<p>13. Wear <input type="text" name="q13"> on the day.</p>
+<p>14. Check the <input type="text" name="q14"> the night before the marathon.</p>
+<p>15. Let the <input type="text" name="q15"> give drinks to the runners.</p>
+<p>16. Stay on one side of the road to avoid <input type="text" name="q16">.</p>
+<p>17. Don’t arrange to meet runners near the <input type="text" name="q17">.</p>
+
+<h3>Questions 18–20</h3>
+<p><strong>What does the speaker say about the following forms of transport?</strong></p>
+<p>Write the correct letter, A–E, next to questions 18–20.</p>
+<ul>
+  <li><strong>A</strong> will take more passengers than usual</li>
+  <li><strong>B</strong> will suit people who want to see the start of the race</li>
+  <li><strong>C</strong> waiting times will be longer than usual</li>
+  <li><strong>D</strong> will have fewer staff than usual</li>
+  <li><strong>E</strong> some work schedules will change</li>
+</ul>
+<p>18. Taxis <input type="text" name="q18"></p>
+<p>19. Trams <input type="text" name="q19"></p>
+<p>20. Buses <input type="text" name="q20"></p>
+
+<!-- Audio for Part 3 -->
+<div style="text-align:center; margin-bottom: 30px;">
+  <audio controls>
+    <source src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Part%204.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+<div style="text-align:center; margin-bottom: 30px;">
+  <audio controls>
+    <source src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Part%203.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<form id="part3Form">
+  <h3>Questions 21–26</h3>
+  <p><strong>Choose the correct letter, A, B or C.</strong></p>
+
+  <div class="question-block">
+    <p><strong>21.</strong> What does Ahmed say about last week’s seminar?</p>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="q21" value="A"> A. He wasn’t able to get there on time.</label>
+      <label><input type="checkbox" name="q21" value="B"> B. He didn’t know all the students.</label>
+      <label><input type="checkbox" name="q21" value="C"> C. He couldn’t understand everything.</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p><strong>22.</strong> What does the tutor say about Ahmed’s preparation for the seminar?</p>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="q22" value="A"> A. He was better prepared than some students.</label>
+      <label><input type="checkbox" name="q22" value="B"> B. He completed some useful work.</label>
+      <label><input type="checkbox" name="q22" value="C"> C. He read some useful articles.</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p><strong>23.</strong> What does Ahmed say about his participation in the seminar?</p>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="q23" value="A"> A. He tended to speak to his neighbour only.</label>
+      <label><input type="checkbox" name="q23" value="B"> B. He spoke when other students were talking.</label>
+      <label><input type="checkbox" name="q23" value="C"> C. He felt embarrassed when other students looked at him.</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p><strong>24.</strong> What does Ahmed worry about most in seminars?</p>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="q24" value="A"> A. speaking at the right time</label>
+      <label><input type="checkbox" name="q24" value="B"> B. taking enough notes</label>
+      <label><input type="checkbox" name="q24" value="C"> C. staying focused</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p><strong>25.</strong> What does Ahmed say about his role in the group?</p>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="q25" value="A"> A. He hasn’t thought about it.</label>
+      <label><input type="checkbox" name="q25" value="B"> B. He’d like to change it.</label>
+      <label><input type="checkbox" name="q25" value="C"> C. He feels he is acting a part.</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p><strong>26.</strong> At the next seminar, Ahmed’s tutor suggests he should</p>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="q26" value="A"> A. give other students more help with their work.</label>
+      <label><input type="checkbox" name="q26" value="B"> B. observe the behaviour of other students.</label>
+      <label><input type="checkbox" name="q26" value="C"> C. ask other students for their views.</label>
+    </div>
+  </div>
+
+  <h3>Questions 27–30</h3>
+  <p><strong>Choose <u>TWO</u> letters, A–E.</strong></p>
+
+  <div class="question-block">
+    <p><strong>27–28.</strong> Which TWO points does Javier make about the other students' presentations?</p>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="q27_28" value="A"> A. They were all about climate change.</label>
+      <label><input type="checkbox" name="q27_28" value="B"> B. They were very repetitive.</label>
+      <label><input type="checkbox" name="q27_28" value="C"> C. They were mostly too short.</label>
+      <label><input type="checkbox" name="q27_28" value="D"> D. They didn’t cover the required content.</label>
+      <label><input type="checkbox" name="q27_28" value="E"> E. They used too much technical language.</label>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p><strong>29–30.</strong> Which TWO things does the tutor suggest Javier should do?</p>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="q29_30" value="A"> A. talk more to other students</label>
+      <label><input type="checkbox" name="q29_30" value="B"> B. make his topic more interesting</label>
+      <label><input type="checkbox" name="q29_30" value="C"> C. speak more slowly</label>
+      <label><input type="checkbox" name="q29_30" value="D"> D. use shorter sentences</label>
+      <label><input type="checkbox" name="q29_30" value="E"> E. check the meaning of new words</label>
+    </div>
+  </div>
+
+  </form>
+
+<!-- Audio for Part 4 -->
+<div style="text-align:center; margin-bottom: 30px;">
+  <audio controls>
+    <source src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Part%204.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<!-- Part 4 Questions 31–40 -->
+<h3>Questions 31–40</h3>
+<p><strong>Complete the notes below. Write <u>NO MORE THAN TWO WORDS</u> for each answer.</strong></p>
+<h4>Desert Plants</h4>
+
+<h4>Background</h4>
+<ul>
+  <li>Deserts found in what is known as a 31 <input type="text" name="q31"> (or dry area).</li>
+  <li>Annual rainfall, if any, amounts to a 32 <input type="text" name="q32">.</li>
+  <li>Soil contains a lot of salt and 33 <input type="text" name="q33">.</li>
+</ul>
+
+<h4>General adaptation of desert plants</h4>
+<ul>
+  <li>They can 34 <input type="text" name="q34"> and store water.</li>
+  <li>They have features that reduce water loss.</li>
+</ul>
+
+<h4>Examples of adaptations</h4>
+<ul>
+  <li><em>Saguaro Cactus:</em> stores water in its 35 <input type="text" name="q35"></li>
+  <li><em>Barrel Cactus:</em> can 36 <input type="text" name="q36"> or shrink according to the weather</li>
+  <li><em>Old Man Cactus:</em> has 37 <input type="text" name="q37"> that reflect the sun</li>
+  <li><em>Prickly Pear Cactus:</em> has 38 <input type="text" name="q38"> to keep away the animals</li>
+  <li><em>Desert Spoon:</em> leaves are 39 <input type="text" name="q39"> to reduce water loss</li>
+  <li><em>Aloe Plant:</em> leaf surface acts like a 40 <input type="text" name="q40"> covering and keeps water inside</li>
+</ul>
+
+<button type="button" class="submit-btn" onclick="calculateScore()">Submit</button>
+
+<script>
+// Correct answer list with flexible handling for multiple valid answers
+const correctAnswers = {
+  q1: ["Dress your Best", "dress your best"],
+  q2: ["Kirby"],
+  q3: ["09356 788 545"],
+  q4: ["extra charge", "charge"],
+  q5: ["American Express", "american express", "AMERICAN EXPRESS"],
+  q6: ["black", "dark"],
+  q7: ["glass desk", "glass desks"],
+  q8: ["TG 586", "TG586", "tg 586", "tg586"],
+  q9: ["yellow"],
+  q10: ["coffee table"],
+  q11: ["plan"],
+  q12: ["on foot"],
+  q13: ["sensible clothes"],
+  q14: ["weather forecast", "forecast"],
+  q15: ["volunteers"],
+  q16: ["accidents"],
+  q17: ["finish line"],
+  q18: ["c"],
+  q19: ["b"],
+  q20: ["e"],
+  q21: ["c"],
+  q22: ["b"],
+  q23: ["a"],
+  q24: ["c"],
+  q25: ["c"],
+  q26: ["b"],
+  q27_28: ["d", "e"],
+  q29_30: ["a", "c"],
+  q31: ["rain shadow"],
+  q32: ["few inches"],
+  q33: ["minerals", "other minerals"],
+  q34: ["collect"],
+  q35: ["stem", "green stem"],
+  q36: ["expand"],
+  q37: ["white hairs"],
+  q38: ["thorns", "sharp thorns"],
+  q39: ["tough", "very tough"],
+  q40: ["plastic"]
+};
+
+function calculateScore() {
+  const form = document.forms[0];
+  let score = 0;
+
+  for (let i = 1; i <= 40; i++) {
+    const name = `q${i}`;
+    const input = form.elements[name];
+    if (!input || Array.isArray(correctAnswers[name])) continue;
+
+    const val = (input.value || "").trim();
+    const validAnswers = correctAnswers[name];
+    if (validAnswers.includes(val)) score++;
+  }
+
+  const multiPartGroups = [
+    { name: "q27_28", expected: correctAnswers.q27_28 },
+    { name: "q29_30", expected: correctAnswers.q29_30 }
+  ];
+
+  multiPartGroups.forEach(group => {
+    const checkboxes = document.querySelectorAll(`input[name='${group.name}']:checked`);
+    const selected = Array.from(checkboxes).map(cb => cb.value.toLowerCase());
+    const expected = group.expected.map(x => x.toLowerCase());
+    const correctCount = selected.filter(val => expected.includes(val)).length;
+    score += correctCount;
+  });
+
+  const band = getBandScore(score);
+  alert(`✅ Your score: ${score}/40\n🎓 IELTS Band Score (Listening - Academic): ${band}`);
+}
+</script>
+
+</div>
+
+<script>
+function startTest() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("testBody").style.display = "block";
+}
+</script>
+
+</body>
+</html>
