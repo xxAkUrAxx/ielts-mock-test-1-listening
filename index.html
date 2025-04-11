@@ -16,79 +16,81 @@
       margin: 0;
       padding: 0;
     }
-.signup-fields {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centers inputs and button */
-  gap: 10px;
-}
 
-.signup-fields input {
-  width: 100%;
-  max-width: 300px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-}
+    .signup-fields {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
 
-.signup-fields button {
-  background-color: var(--wse-blue);
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 10px;
-}
- .container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 40px;
-  text-align: center;
-}
+    .signup-fields input {
+      width: 100%;
+      max-width: 300px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
 
-.logo {
-  width: 300px;
-  display: block;
-  margin: 0 auto 30px auto; /* centers and adds spacing below */
-}
+    .signup-fields button {
+      background-color: var(--wse-blue);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
 
-.signup-card {
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
-  margin: auto;
-  text-align: center;
-}
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 40px;
+      text-align: center;
+    }
 
-.signup-card input {
-  width: 100%;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  display: block;
-}
+    .logo {
+      width: 300px;
+      display: block;
+      margin: 0 auto 30px auto;
+    }
 
-.signup-card button {
-  background-color: var(--wse-blue);
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 15px;
-}
+    .signup-card {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+
+    .signup-card input {
+      width: 100%;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      display: block;
+    }
+
+    .signup-card button {
+      background-color: var(--wse-blue);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
 
     #test-section {
       display: none;
@@ -161,7 +163,7 @@
       background-color: #a70c25;
     }
 
-    #part1, #part2 {
+    #part1, #part2, #part3, #part4 {
       display: none;
     }
 
@@ -169,7 +171,6 @@
       margin: 30px 0;
     }
 
-    /* Form table styles */
     .form-table, .form-table th, .form-table td {
       border: 1px solid #999;
       border-collapse: collapse;
@@ -215,32 +216,28 @@
 <body>
 
   <div class="container">
-      <img src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Blue-No%20Background.png" alt="Wall Street English Logo" class="logo">
+    <img src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Blue-No%20Background.png" alt="Wall Street English Logo" class="logo">
 
-  <div class="signup-card">
-     <h2>Sign Up</h2>
-
-  <div class="signup-fields">
-    <input type="text" id="firstName" placeholder="First Name" required>
-    <input type="text" id="lastName" placeholder="Last Name" required>
-    <input type="text" id="studentNumber" placeholder="Wall Street Student Number" required>
-    <button onclick="startTest()">Start Test</button>
-  </div>
+    <div class="signup-card">
+      <h2>Sign Up</h2>
+      <div class="signup-fields">
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+        <input type="text" id="studentNumber" placeholder="Wall Street Student Number" required>
+        <button onclick="startTest()">Start Test</button>
+      </div>
     </div>
 
     <!-- Test Section -->
     <div id="test-section">
       <div id="reset-link" onclick="resetTest()">Reset Test</div>
-
       <div id="student-info-bar">
         <span id="student-name-display"></span><br>
         <span id="current-time"></span>
       </div>
 
-      <img src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Blue-No%20Background.png" alt="Wall Street English Logo" style="width: 150px; margin-bottom: 20px;">
-      <h2>Welcome to IELTS Listening Test 1</h2>
-      <p id="user-info"></p>
-      <hr>
+      <img src="https://raw.githubusercontent.com/xxAkUrAxx/
+::contentReference[oaicite:2]{index=2}
 
       <!-- Instructions Section -->
       <div id="instructions">
