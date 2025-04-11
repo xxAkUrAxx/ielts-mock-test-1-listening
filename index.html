@@ -2,138 +2,728 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>IELTS Listening Mock Test</title>
+  <title>IELTS Test 1 - Listening</title>
   <style>
+    :root {
+      --wse-blue: #003366;
+      --wse-light-blue: #f2f4f7;
+      --wse-accent: #c8102e;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
+      background: var(--wse-light-blue);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+.signup-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers inputs and button */
+  gap: 10px;
+}
+
+.signup-fields input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.signup-fields button {
+  background-color: var(--wse-blue);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+ .container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 40px;
+  text-align: center;
+}
+
+.logo {
+  width: 300px;
+  display: block;
+  margin: 0 auto 30px auto; /* centers and adds spacing below */
+}
+
+.signup-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.signup-card input {
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  display: block;
+}
+
+.signup-card button {
+  background-color: var(--wse-blue);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+    #test-section {
+      display: none;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    #student-info-bar {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: var(--wse-blue);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    #reset-link {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 13px;
+      color: var(--wse-blue);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    #instructions {
+      text-align: center;
+      padding: 20px;
+    }
+
+    #instructions h3 {
+      color: var(--wse-blue);
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #instructions p, #instructions ul {
+      font-size: 16px;
+      max-width: 700px;
+      margin: auto;
+      text-align: left;
       line-height: 1.6;
     }
-    .part {
+
+    #instructions ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    #start-part1 {
+      margin-top: 30px;
+      background-color: var(--wse-accent);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #start-part1:hover {
+      background-color: #a70c25;
+    }
+
+    #part1, #part2 {
       display: none;
     }
-    .active {
-      display: block;
+
+    hr {
+      margin: 30px 0;
     }
-    button {
-      padding: 10px 15px;
-      font-size: 16px;
+
+    /* Form table styles */
+    .form-table, .form-table th, .form-table td {
+      border: 1px solid #999;
+      border-collapse: collapse;
+      padding: 8px;
+      font-size: 15px;
+      text-align: left;
+    }
+
+    .form-table {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .form-input {
+      width: 150px;
+      padding: 6px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .answer-example {
+      color: #444;
+      font-style: italic;
+    }
+
+    .next-button {
       margin-top: 20px;
+      background-color: var(--wse-blue);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
     }
-    @media (max-width: 768px) {
-      body { margin: 15px; }
-      table { width: 100%; overflow-x: auto; display: block; }
+
+    .next-button:hover {
+      background-color: #002244;
     }
   </style>
 </head>
 <body>
 
-<div id="intro" style="text-align:center;">
-  <h2>IELTS Listening Mock Test</h2>
-  <form id="userInfo" onsubmit="event.preventDefault(); startTest();">
-    <label>Full Name: <input type="text" name="fullname" required></label><br><br>
-    <label>Student Number: <input type="text" name="studentNumber" required></label><br><br>
-    <button type="submit">Start Test</button>
-  </form>
+  <div class="container">
+      <img src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Blue-No%20Background.png" alt="Wall Street English Logo" class="logo">
+
+  <div class="signup-card">
+     <h2>Sign Up</h2>
+
+  <div class="signup-fields">
+    <input type="text" id="firstName" placeholder="First Name" required>
+    <input type="text" id="lastName" placeholder="Last Name" required>
+    <input type="text" id="studentNumber" placeholder="Wall Street Student Number" required>
+    <button onclick="startTest()">Start Test</button>
+  </div>
+    </div>
+
+    <!-- Test Section -->
+    <div id="test-section">
+      <div id="reset-link" onclick="resetTest()">Reset Test</div>
+
+      <div id="student-info-bar">
+        <span id="student-name-display"></span><br>
+        <span id="current-time"></span>
+      </div>
+
+      <img src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Blue-No%20Background.png" alt="Wall Street English Logo" style="width: 150px; margin-bottom: 20px;">
+      <h2>Welcome to IELTS Listening Test 1</h2>
+      <p id="user-info"></p>
+      <hr>
+
+      <!-- Instructions Section -->
+      <div id="instructions">
+        <h3>🎧 IELTS Listening Digital Test Instructions</h3>
+        <p>Welcome to the IELTS Listening Test.</p>
+        <p>This test is divided into 4 parts. Each part has a different listening task and a set of questions.</p>
+        <p>Please carefully read the instructions for each part before you start.</p>
+
+        <h4>Instructions:</h4>
+        <ul>
+          <li>You will hear each recording only once.</li>
+          <li>Listen carefully and answer all questions as you go.</li>
+          <li>For each question, fill in the blank or choose the correct answer based on what you hear.</li>
+          <li>Use the on-screen tools to pause, skip, or adjust volume only before each recording starts.</li>
+          <li>You will have a short amount of time to check your answers after each part.</li>
+          <li>Make sure you are in a quiet environment and wearing headphones.</li>
+        </ul>
+
+        <button id="start-part1" onclick="beginPart1()">Start Part 1</button>
+      </div>
+
+      <!-- Part 1 Section -->
+      <div id="part1">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <p style="margin: 0; font-weight: bold;">Click to start the audio. You will hear it only once.</p>
+          <button id="play-audio-btn" onclick="playListeningAudio()" style="background-color: var(--wse-accent); color: white; padding: 10px 20px; border: none; border-radius: 6px; font-size: 14px; cursor: pointer;">
+            ▶️ Play Audio
+          </button>
+          <audio id="listening-audio" preload="auto">
+            <source src="https://github.com/xxAkUrAxx/ielts-mock-test-1-listening/raw/refs/heads/main/Part%201.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <h3 style="color: var(--wse-blue);">PART 1</h3>
+        <p><strong>Questions 1 – 5</strong><br>
+        Complete the form below. Write <strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong> for each answer.</p>
+
+        <table class="form-table">
+          <tr>
+            <td>Example<br><span class="answer-example">Caller's name:</span></td>
+            <td><strong>Answer</strong><br><em>Sue Brown</em></td>
+          </tr>
+          <tr>
+            <td>Company name:</td>
+            <td>1. <input type="text" class="form-input" name="q1"></td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td>2. <input type="text" class="form-input" name="q2"> Trading Estate,<br>210 New Hampton Road<br>South Down</td>
+          </tr>
+          <tr>
+            <td>Contact number:</td>
+            <td>3. <input type="text" class="form-input" name="q3"> (mobile)</td>
+          </tr>
+          <tr>
+            <td>Delivery option:</td>
+            <td>1☐ &nbsp;&nbsp;&nbsp;2☑ (no 4. <input type="text" class="form-input" name="q4">)</td>
+          </tr>
+          <tr>
+            <td>Method of payment:</td>
+            <td>Credit card – Type 5. <input type="text" class="form-input" name="q5"></td>
+          </tr>
+        </table>
+
+        <p><strong>Questions 6 – 10</strong><br>
+        Complete the table notes below. Write <strong>NO MORE THAN TWO WORDS AND/OR A NUMBER</strong> for each answer.</p>
+
+        <table class="form-table">
+          <tr>
+            <th>Item</th>
+            <th>Code</th>
+            <th>Colour</th>
+            <th>Quantity</th>
+          </tr>
+          <tr>
+            <td>Office chairs</td>
+            <td>ASP 23</td>
+            <td>6. <input type="text" class="form-input" name="q6"></td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>7. <input type="text" class="form-input" name="q7"></td>
+            <td>8. <input type="text" class="form-input" name="q8"></td>
+            <td>&nbsp;</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Leather sofa</td>
+            <td>DFD 44</td>
+            <td>9. <input type="text" class="form-input" name="q9"></td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>10. <input type="text" class="form-input" name="q10"></td>
+            <td>TX 22</td>
+            <td>silver</td>
+            <td>1</td>
+          </tr>
+        </table>
+
+        <button onclick="submitPart1()" class="next-button">Next Section</button>
+      </div>
+
+      <!-- Part 2 Section -->
+      <hr>
+<div id="part2" style="margin-top: 40px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <p style="margin: 0; font-weight: bold;">Click to start the audio. You will hear it only once.</p>
+    <button id="play-audio-btn-2" onclick="playListeningAudio2()" style="background-color: var(--wse-accent); color: white; padding: 10px 20px; border: none; border-radius: 6px; font-size: 14px; cursor: pointer;">
+      ▶️ Play Audio
+    </button>
+    <audio id="listening-audio-2" preload="auto">
+      <source src="https://github.com/xxAkUrAxx/ielts-mock-test-1-listening/raw/refs/heads/main/Part%202.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <h3 style="color: var(--wse-blue);">PART 2</h3>
+
+  <p><strong>Questions 11 – 17</strong><br>
+  Complete the sentences below. Write <strong>NO MORE THAN TWO WORDS</strong> for each answer.</p>
+
+  <p><strong>Marathon – Tips for Spectators</strong></p>
+
+  <ol start="11" style="padding-left: 20px;">
+    <li>To enjoy the day, make sure you <input type="text" class="form-input" name="q11"> it first.</li>
+    <li>Travel <input type="text" class="form-input" name="q12"> within the city centre.</li>
+    <li>Wear <input type="text" class="form-input" name="q13"> on the day.</li>
+    <li>Check the <input type="text" class="form-input" name="q14"> the night before the marathon.</li>
+    <li>Let the <input type="text" class="form-input" name="q15"> give drinks to the runners.</li>
+    <li>Stay on one side of the road to avoid <input type="text" class="form-input" name="q16">.</li>
+    <li>Don’t arrange to meet runners near the <input type="text" class="form-input" name="q17">.</li>
+  </ol>
+
+  <p><strong>Questions 18 – 20</strong><br>
+  What does the speaker say about the following forms of transport?<br>
+  Write the correct letter <strong>A, B, C, D or E</strong>, next to questions 18 – 20.</p>
+
+  <ul style="list-style: none; padding-left: 0; font-size: 15px;">
+    <li><strong>A</strong> – will take more passengers than usual</li>
+    <li><strong>B</strong> – will suit people who want to see the start of the race</li>
+    <li><strong>C</strong> – waiting times will be longer than usual</li>
+    <li><strong>D</strong> – will have fewer staff than usual</li>
+    <li><strong>E</strong> – some work schedules will change</li>
+  </ul>
+
+  <table class="form-table">
+    <tr>
+      <td>18. taxis</td>
+      <td>
+        <select class="form-input" name="q18">
+          <option value="">Select</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>19. trams</td>
+      <td>
+        <select class="form-input" name="q19">
+          <option value="">Select</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>20. buses</td>
+      <td>
+        <select class="form-input" name="q20">
+          <option value="">Select</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+ <button class="next-button" onclick="submitPart2()">Next Section</button>
 </div>
 
-<div id="testContainer" style="display:none;">
 
-  <!-- Part 1 -->
-  <div id="part1" class="part active">
-    <h3>Part 1</h3>
-    <audio id="audioPart1" controls autoplay>
-      <source src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Part%201.mp3" type="audio/mpeg">
+javascript
+Copy
+Edit
+
+<hr>
+<div id="part3" style="margin-top: 40px; display: none;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <p style="margin: 0; font-weight: bold;">Click to start the audio. You will hear it only once.</p>
+    <button id="play-audio-btn-3" onclick="playListeningAudio3()" style="background-color: var(--wse-accent); color: white; padding: 10px 20px; border: none; border-radius: 6px; font-size: 14px; cursor: pointer;">
+      ▶️ Play Audio
+    </button>
+    <audio id="listening-audio-3" preload="auto">
+      <source src="https://github.com/xxAkUrAxx/ielts-mock-test-1-listening/raw/refs/heads/main/Part%203.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
     </audio>
-    <!-- Questions for Part 1 -->
-    <p>1. Customer name: <input type="text" name="q1"></p>
-    <p>2. Phone number: <input type="text" name="q2"></p>
-    <!-- (Continue adding questions...) -->
-    <button onclick="navigateTo('part2')">Next Part →</button>
   </div>
 
-  <!-- Part 2 -->
-  <div id="part2" class="part">
-    <h3>Part 2</h3>
-    <audio id="audioPart2" controls autoplay>
-      <source src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Part%202.mp3" type="audio/mpeg">
-    </audio>
-    <!-- Questions for Part 2 -->
-    <p>11. To enjoy the day, make sure you <input type="text" name="q11"> it first.</p>
-    <!-- (Continue adding questions...) -->
-    <button onclick="navigateTo('part1')">← Previous</button>
-    <button onclick="navigateTo('part3')">Next Part →</button>
+  <h3 style="color: var(--wse-blue);">PART 3</h3>
+  <p><strong>Questions 21 – 26</strong><br>Choose the correct letter, <strong>A, B, or C</strong>.</p>
+
+  <!-- Questions 21–26 -->
+  <div style="margin-bottom: 20px;">
+    <strong>21. What does Ahmed say about last week’s seminar?</strong><br>
+    <label><input type="radio" name="q21" value="A"> A – He wasn’t able to get there on time.</label><br>
+    <label><input type="radio" name="q21" value="B"> B – He didn’t know all the students.</label><br>
+    <label><input type="radio" name="q21" value="C"> C – He couldn’t understand everything.</label>
   </div>
 
-  <!-- Part 3 -->
-  <div id="part3" class="part">
-    <h3>Part 3</h3>
-    <audio id="audioPart3" controls autoplay>
-      <source src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Part%203.mp3" type="audio/mpeg">
-    </audio>
-    <!-- Questions for Part 3 -->
-    <p><strong>21.</strong> What does Ahmed say about last week’s seminar?</p>
-    <label><input type="checkbox" name="q21" value="A"> He wasn’t able to get there on time.</label><br>
-    <!-- (Continue adding questions...) -->
-    <button onclick="navigateTo('part2')">← Previous</button>
-    <button onclick="navigateTo('part4')">Next Part →</button>
+  <div style="margin-bottom: 20px;">
+    <strong>22. What does the tutor say about Ahmed’s preparation for the seminar?</strong><br>
+    <label><input type="radio" name="q22" value="A"> A – He was better prepared than some students.</label><br>
+    <label><input type="radio" name="q22" value="B"> B – He completed some useful work.</label><br>
+    <label><input type="radio" name="q22" value="C"> C – He read some useful articles.</label>
   </div>
 
-  <!-- Part 4 -->
-  <div id="part4" class="part">
-    <h3>Part 4</h3>
-    <audio id="audioPart4" controls autoplay>
-      <source src="https://raw.githubusercontent.com/xxAkUrAxx/ielts-mock-test-1-listening/main/Part%204.mp3" type="audio/mpeg">
-    </audio>
-    <!-- Questions for Part 4 -->
-    <p>31. Deserts found in what is known as a <input type="text" name="q31">.</p>
-    <!-- (Continue adding questions...) -->
-    <button onclick="navigateTo('part3')">← Previous</button>
-    <button onclick="calculateScore()">Submit Test</button>
+  <div style="margin-bottom: 20px;">
+    <strong>23. What does Ahmed say about his participation in the seminar?</strong><br>
+    <label><input type="radio" name="q23" value="A"> A – He tended to speak to his neighbour only.</label><br>
+    <label><input type="radio" name="q23" value="B"> B – He spoke when other students were talking.</label><br>
+    <label><input type="radio" name="q23" value="C"> C – He felt embarrassed when others looked at him.</label>
   </div>
 
+  <div style="margin-bottom: 20px;">
+    <strong>24. What does Ahmed worry about most in seminars?</strong><br>
+    <label><input type="radio" name="q24" value="A"> A – speaking at the right time</label><br>
+    <label><input type="radio" name="q24" value="B"> B – taking enough notes</label><br>
+    <label><input type="radio" name="q24" value="C"> C – staying focused</label>
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <strong>25. What does Ahmed say about his role in the group?</strong><br>
+    <label><input type="radio" name="q25" value="A"> A – He hasn’t thought about it.</label><br>
+    <label><input type="radio" name="q25" value="B"> B – He’d like to change it.</label><br>
+    <label><input type="radio" name="q25" value="C"> C – He feels he is acting a part.</label>
+  </div>
+
+  <div style="margin-bottom: 30px;">
+    <strong>26. At the next seminar, Ahmed’s tutor suggests he should:</strong><br>
+    <label><input type="radio" name="q26" value="A"> A – give other students more help</label><br>
+    <label><input type="radio" name="q26" value="B"> B – observe the behaviour of other students</label><br>
+    <label><input type="radio" name="q26" value="C"> C – ask other students for their views</label>
+  </div>
+
+  <!-- Questions 27–28 -->
+  <div style="margin-bottom: 30px;">
+    <p><strong>Questions 27 – 28</strong><br>Choose TWO letters, <strong>A–E</strong>.</p>
+    <p>What TWO strategies does the tutor suggest for the next seminar?</p>
+    <label><input type="checkbox" name="q27_28" value="A"> A – speak more frequently</label><br>
+    <label><input type="checkbox" name="q27_28" value="B"> B – behave in a confident manner</label><br>
+    <label><input type="checkbox" name="q27_28" value="C"> C – sit next to someone helpful</label><br>
+    <label><input type="checkbox" name="q27_28" value="D"> D – listen to what other people say</label><br>
+    <label><input type="checkbox" name="q27_28" value="E"> E – think of questions to ask</label>
+  </div>
+
+  <!-- Questions 29–30 -->
+  <div style="margin-bottom: 40px;">
+    <p><strong>Questions 29 – 30</strong><br>Choose TWO letters, <strong>A–E</strong>.</p>
+    <p>Which TWO suggestions does the tutor make about taking notes?</p>
+    <label><input type="checkbox" name="q29_30" value="A"> A – plan them before the seminar</label><br>
+    <label><input type="checkbox" name="q29_30" value="B"> B – note down key words that people say</label><br>
+    <label><input type="checkbox" name="q29_30" value="C"> C – note points to say later</label><br>
+    <label><input type="checkbox" name="q29_30" value="D"> D – include self-analysis</label><br>
+    <label><input type="checkbox" name="q29_30" value="E"> E – rewrite them after the seminar</label>
+  </div>
+
+  <!-- Next Section Button -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button class="next-button" onclick="submitPart3()">Next Section</button>
+  </div>
 </div>
 
-<script>
-function startTest() {
-  const fullName = document.querySelector("input[name='fullname']").value;
-  const studentNumber = document.querySelector("input[name='studentNumber']").value;
-  localStorage.setItem("fullname", fullName);
-  localStorage.setItem("studentNumber", studentNumber);
-  
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("testContainer").style.display = "block";
-  document.title = `${fullName} - IELTS Listening Mock Test`;
+<hr>
+<div id="part4" style="margin-top: 40px; display: none;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <p style="margin: 0; font-weight: bold;">Click to start the audio. You will hear it only once.</p>
+    <button id="play-audio-btn-4" onclick="playListeningAudio4()" style="background-color: var(--wse-accent); color: white; padding: 10px 20px; border: none; border-radius: 6px; font-size: 14px; cursor: pointer;">
+      ▶️ Play Audio
+    </button>
+    <audio id="listening-audio-4" preload="auto">
+      <source src="https://github.com/xxAkUrAxx/ielts-mock-test-1-listening/raw/refs/heads/main/Part%204.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
-  playAudio('Part1');
-}
+  <h3 style="color: var(--wse-blue);">PART 4</h3>
+  <p><strong>Questions 31 – 40</strong><br>Complete the notes below. Write <strong>ONE WORD ONLY</strong> for each answer.</p>
 
-function navigateTo(partId) {
-  document.querySelectorAll(".part").forEach(div => div.classList.remove('active'));
-  document.getElementById(partId).classList.add('active');
-  playAudio(partId.charAt(0).toUpperCase() + partId.slice(1));
-}
+  <ol start="31" style="padding-left: 20px;">
+    <li>Maple syrup is made from the sap of the maple tree and is described as <input type="text" class="form-input" name="q31"> in color.</li>
+    <li>It is considered a <input type="text" class="form-input" name="q32"> alternative to refined sugar.</li>
+    <li>The best growing conditions and <input type="text" class="form-input" name="q33"> for maple trees are in Canada and North America.</li>
+    <li>Early producers used hot <input type="text" class="form-input" name="q34"> to heat the sap.</li>
+    <li>Tree trunks may not have the correct <input type="text" class="form-input" name="q35"> until they have been growing for 40 years.</li>
+    <li>A tap drilled into the trunk and a <input type="text" class="form-input" name="q36"> carries the sap into a bucket.</li>
+    <li>Large pans of sap called evaporators are heated by means of a <input type="text" class="form-input" name="q37">.</li>
+    <li>A lot of <input type="text" class="form-input" name="q38"> is produced during the evaporation process.</li>
+    <li>‘Sugar sand’ is removed because it makes the syrup look <input type="text" class="form-input" name="q39"> and affects the taste.</li>
+    <li>A huge quantity of sap is needed to make a <input type="text" class="form-input" name="q40"> of maple syrup.</li>
+  </ol>
 
-function playAudio(part) {
-  document.querySelectorAll("audio").forEach(audio => audio.pause());
-  const audioElem = document.getElementById(`audio${part}`);
-  audioElem.currentTime = 0;
-  audioElem.play();
-}
+  <button class="next-button" onclick="submitPart4()">Submit Test</button>
+</div>
 
-function calculateScore() {
-  // Placeholder scoring logic
-  alert("Scoring will be implemented here, along with Google Sheets integration.");
-}
+ <script>
+  function startTest() {
+    const first = document.getElementById("firstName").value.trim();
+    const last = document.getElementById("lastName").value.trim();
+    const student = document.getElementById("studentNumber").value.trim();
 
-// Load previously saved answers if refreshed
-window.onload = () => {
-  document.querySelectorAll("input").forEach(input => {
-    input.value = localStorage.getItem(input.name) || '';
-    input.oninput = () => localStorage.setItem(input.name, input.value);
-  });
-};
+    if (!first || !last || !student) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    const fullName = `${first} ${last}`;
+    localStorage.setItem("wse-name", fullName);
+    localStorage.setItem("wse-id", student);
+
+    document.getElementById("signup-section").style.display = "none";
+    document.getElementById("test-section").style.display = "block";
+    document.getElementById("user-info").innerText = `Student: ${fullName} | ID: ${student}`;
+    document.getElementById("student-name-display").innerText = fullName;
+
+    updateTime();
+  }
+
+  function beginPart1() {
+    document.getElementById("instructions").style.display = "none";
+    document.getElementById("part1").style.display = "block";
+  }
+
+  function updateTime() {
+    const now = new Date();
+    const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    document.getElementById("current-time").innerText = `Time: ${time}`;
+  }
+
+  function playListeningAudio() {
+    const audio = document.getElementById("listening-audio");
+    const button = document.getElementById("play-audio-btn");
+    audio.play();
+    button.style.display = "none";
+    setTimeout(() => {
+      audio.style.display = "none";
+    }, 500);
+  }
+
+  function playListeningAudio2() {
+    const audio = document.getElementById("listening-audio-2");
+    const button = document.getElementById("play-audio-btn-2");
+    audio.play();
+    button.style.display = "none";
+    setTimeout(() => {
+      audio.style.display = "none";
+    }, 500);
+  }
+
+  function playListeningAudio3() {
+    const audio = document.getElementById("listening-audio-3");
+    const button = document.getElementById("play-audio-btn-3");
+    audio.play();
+    button.style.display = "none";
+    setTimeout(() => {
+      audio.style.display = "none";
+    }, 500);
+  }
+
+  function playListeningAudio4() {
+    const audio = document.getElementById("listening-audio-4");
+    const button = document.getElementById("play-audio-btn-4");
+    audio.play();
+    button.style.display = "none";
+    setTimeout(() => {
+      audio.style.display = "none";
+    }, 500);
+  }
+
+  function submitPart1() {
+    const answers = {};
+    for (let i = 1; i <= 10; i++) {
+      const input = document.querySelector(`[name="q${i}"]`);
+      answers[`q${i}`] = input ? input.value.trim() : "";
+    }
+    localStorage.setItem("listening-part1-answers", JSON.stringify(answers));
+    alert("Answers saved! Starting Part 2...");
+    document.getElementById("part1").style.display = "none";
+    document.getElementById("part2").style.display = "block";
+  }
+
+  function submitPart2() {
+    const answers = {};
+    for (let i = 11; i <= 17; i++) {
+      const input = document.querySelector(`[name="q${i}"]`);
+      answers[`q${i}`] = input ? input.value.trim() : "";
+    }
+    for (let i = 18; i <= 20; i++) {
+      const select = document.querySelector(`[name="q${i}"]`);
+      answers[`q${i}`] = select ? select.value : "";
+    }
+    localStorage.setItem("listening-part2-answers", JSON.stringify(answers));
+    alert("Answers saved! Starting Part 3...");
+    document.getElementById("part2").style.display = "none";
+    document.getElementById("part3").style.display = "block";
+  }
+
+  function submitPart3() {
+    const answers = {};
+    for (let i = 21; i <= 26; i++) {
+      const selected = document.querySelector(`input[name="q${i}"]:checked`);
+      answers[`q${i}`] = selected ? selected.value : "";
+    }
+    ["q27_28", "q29_30"].forEach((name, i) => {
+      const selected = Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(el => el.value);
+      answers[`q${27 + i * 2}-${28 + i * 2}`] = selected;
+    });
+    localStorage.setItem("listening-part3-answers", JSON.stringify(answers));
+    alert("Answers saved! Starting Part 4...");
+    document.getElementById("part3").style.display = "none";
+    document.getElementById("part4").style.display = "block";
+  }
+
+  function submitPart4() {
+    const answers = {};
+    for (let i = 31; i <= 40; i++) {
+      const input = document.querySelector(`[name="q${i}"]`);
+      answers[`q${i}`] = input ? input.value.trim() : "";
+    }
+
+    localStorage.setItem("listening-part4-answers", JSON.stringify(answers));
+
+    const allAnswers = {
+      name: localStorage.getItem("wse-name"),
+      id: localStorage.getItem("wse-id"),
+      ...JSON.parse(localStorage.getItem("listening-part1-answers") || "{}"),
+      ...JSON.parse(localStorage.getItem("listening-part2-answers") || "{}"),
+      ...JSON.parse(localStorage.getItem("listening-part3-answers") || "{}"),
+      ...answers
+    };
+
+    // 👇 Replace this with your actual Google Apps Script URL
+    fetch("YOUR_GOOGLE_SCRIPT_URL", {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(allAnswers)
+    });
+
+    alert("All answers saved and submitted! 🎉");
+  }
+
+  function resetTest() {
+    localStorage.clear();
+    location.reload();
+  }
+
+  window.onload = () => {
+    const name = localStorage.getItem("wse-name");
+    const id = localStorage.getItem("wse-id");
+    if (name && id) {
+      document.getElementById("signup-section").style.display = "none";
+      document.getElementById("test-section").style.display = "block";
+      document.getElementById("user-info").innerText = `Student: ${name} | ID: ${id}`;
+      document.getElementById("student-name-display").innerText = name;
+      updateTime();
+      setInterval(updateTime, 60000);
+    }
+  };
 </script>
+
 
 </body>
 </html>
